@@ -1,0 +1,99 @@
+html,body {
+    background-color: #242323;
+    margin: 0;
+    font-family: monospace;
+    color: hsl(241, 29%, 38%);
+}
+
+#myTable{
+    width: 350px;
+    font-size: 15;
+}
+
+#chat {
+    width: 700px;
+    height: 650px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#chat::-webkit-scrollbar {
+    display: none;
+}
+
+#chat ul {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+#chat li {
+    color: rgb(221, 215, 133);
+}
+#msg {
+    width: auto;
+    height: auto;
+    background-color: hsl(0, 0%, 0%);
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #9248cf;
+    padding: 10px 27px 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.2rem;
+    word-break: break-all;
+}
+
+#chat li {
+    font-size: 1.2rem;
+}
+
+div.barre{
+    width: 2px;
+    height: 40px;
+    opacity: 0;
+    position: absolute;
+    left: 26px;
+    margin-top: -20px;
+    background-color: #9248cf;
+    animation: barre 4s 0.5s forwards ;
+    overflow: hidden;
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes barre {
+    0% {
+      height: 0px;  
+      opacity: 1;
+    }
+    5% {
+      height: 0px;  
+      opacity: 1;
+    }
+    20% {
+      height: 40px;  
+      opacity: 1;
+    }
+    100% {
+      height: 40px;
+      opacity: 1;
+    }
+  }
+
+#chat li:last-of-type {
+    animation-name: slide-in-right;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-in;
+}
+
